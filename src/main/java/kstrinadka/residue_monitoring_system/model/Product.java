@@ -25,6 +25,11 @@ public class Product {
 
     private Long rest;
 
+    private Long cost;
+
+    @Column(name = "out_of_stock", nullable = false)
+    private Long outOfStock;
+
     @ManyToOne
     @JoinColumn (name = "type_id", referencedColumnName = "id", nullable = false)
     private ProductType type;

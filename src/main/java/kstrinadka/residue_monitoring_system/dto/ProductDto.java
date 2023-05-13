@@ -16,4 +16,6 @@ public class ProductDto {
     private String name;
     private Long rest;
     private Long typeId;
+    private Long cost;
+    private Long outOfStock;
 }
