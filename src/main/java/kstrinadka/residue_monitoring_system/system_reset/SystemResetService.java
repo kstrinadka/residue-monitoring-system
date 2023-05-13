@@ -6,6 +6,7 @@ import kstrinadka.residue_monitoring_system.ProductRepository;
 import kstrinadka.residue_monitoring_system.dto.ProductDto;
 import kstrinadka.residue_monitoring_system.model.Product;
 import kstrinadka.residue_monitoring_system.model.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class SystemResetService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
 
+    @Autowired
     public SystemResetService(ProductRepository productRepository,
                        ProductMapper productMapper) {
         this.productMapper = productMapper;
@@ -50,6 +52,7 @@ public class SystemResetService {
         for (Map.Entry<String, Long> cornice: cornicesMap.entrySet()) {
             Product currentCornice = productRepository.getAllProductsByItemNumber(cornice.getKey());
             currentCornice.setRest(cornice.getValue());
+            currentCornice.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
             productRepository.save(currentCornice);
             cornicesList.add(productMapper.productToDto(currentCornice));
         }
@@ -62,6 +65,7 @@ public class SystemResetService {
         for (Map.Entry<String, Long> flavoring: flavoringsMap.entrySet()) {
             Product currentFlavoring = productRepository.getAllProductsByItemNumber(flavoring.getKey());
             currentFlavoring.setRest(flavoring.getValue());
+            currentFlavoring.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
             productRepository.save(currentFlavoring);
             flavoringsList.add(productMapper.productToDto(currentFlavoring));
         }
@@ -74,6 +78,7 @@ public class SystemResetService {
         for (Map.Entry<String, Long> hat: hatsMap.entrySet()) {
             Product currentHat = productRepository.getAllProductsByItemNumber(hat.getKey());
             currentHat.setRest(hat.getValue());
+            currentHat.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
             productRepository.save(currentHat);
             hantsList.add(productMapper.productToDto(currentHat));
         }
@@ -86,6 +91,7 @@ public class SystemResetService {
         for (Map.Entry<String, Long> molding: moldingsMap.entrySet()) {
             Product currentMolding = productRepository.getAllProductsByItemNumber(molding.getKey());
             currentMolding.setRest(molding.getValue());
+            currentMolding.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
             productRepository.save(currentMolding);
             moldingsList.add(productMapper.productToDto(currentMolding));
         }
@@ -98,6 +104,7 @@ public class SystemResetService {
         for (Map.Entry<String, Long> tub: tubsMap.entrySet()) {
             Product currentTub = productRepository.getAllProductsByItemNumber(tub.getKey());
             currentTub.setRest(tub.getValue());
+            currentTub.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
             productRepository.save(currentTub);
             tubsList.add(productMapper.productToDto(currentTub));
         }
@@ -110,6 +117,7 @@ public class SystemResetService {
         for (Map.Entry<String, Long> windowsill: windowsillMap.entrySet()) {
             Product currentWindowsill = productRepository.getAllProductsByItemNumber(windowsill.getKey());
             currentWindowsill.setRest(windowsill.getValue());
+            currentWindowsill.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
             productRepository.save(currentWindowsill);
             windowsillList.add(productMapper.productToDto(currentWindowsill));
         }

@@ -29,65 +29,37 @@ public class MainController {
         return mainService.getAllProducts();
     }
 
+// эти три показателя можно на фронте считать через предыдущий верхний метод!
     /**
      * - нет кнопки
      * - не проверено
-     * @return - Перечень всех шляп
+     * @return - Сколько магазин заработал
      */
-    @GetMapping(path = "/hats/all")
-    public List<ProductDto> getAllHats() {
-        return mainService.getAllHats();
+    @GetMapping(path = "/earnings")
+    public List<ProductDto> getAllEarning() {
+        return mainService.getAllEarning();
+    }
+
+    /**
+     * - нет кнопки
+     * - не проверено
+     * @return - Сколько магазин потерял на out of stock
+     */
+    @GetMapping(path = "/losses")
+    public List<ProductDto> getAllLosses() {
+        return mainService.getAllLosses();
     }
 
 
     /**
      * - нет кнопки
      * - не проверено
-     * @return - Перечень всех карнизов
+     * potential profit
+     * @return - Сколько магазин мог бы заработать, если бы не было out of stock
      */
     @GetMapping(path = "/cornices/all")
-    public List<ProductDto> getAllCornices() {
-        return mainService.getAllCornices();
-    }
-
-    /**
-     * - нет кнопки
-     * - не проверено
-     * @return - Перечень всех молдингов
-     */
-    @GetMapping(path = "/moldings/all")
-    public List<ProductDto> getAllMoldings() {
-        return mainService.getAllMoldings();
-    }
-
-    /**
-     * - нет кнопки
-     * - не проверено
-     * @return - Перечень всех освежителей воздуха
-     */
-    @GetMapping(path = "/flavoring/all")
-    public List<ProductDto> getAllFlavorings() {
-        return mainService.getAllFlavorings();
-    }
-
-    /**
-     * - нет кнопки
-     * - не проверено
-     * @return - Перечень всех бадей
-     */
-    @GetMapping(path = "/tub/all")
-    public List<ProductDto> getAllTubs() {
-        return mainService.getAllTubs();
-    }
-
-    /**
-     * - нет кнопки
-     * - не проверено
-     * @return - Перечень всех подоконников
-     */
-    @GetMapping(path = "/windowsill/all")
-    public List<ProductDto> getAllWindowsills() {
-        return mainService.getAllWindowsills();
+    public List<ProductDto> getPotentialProfit() {
+        return mainService.getPotentialProfit();
     }
 
 }

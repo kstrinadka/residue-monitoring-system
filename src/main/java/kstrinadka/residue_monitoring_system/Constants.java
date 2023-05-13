@@ -8,6 +8,8 @@ public final class Constants {
     private Constants() {} // Запрещаем создание объектов этого класса
 
 
+    public final static Long DEFAULT_OUT_OF_STOCK_VALUE = 0L;
+
 
     public final static String CORNICE_CATEGORY_NAME = "карниз";
     public final static Long CORNICE_CATEGORY_ID = 1L;
