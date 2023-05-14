@@ -18,4 +18,5 @@ public class ProductDto {
     private Long typeId;
     private Long cost;
     private Long outOfStock;
+    private Long soldQuantity;
 }

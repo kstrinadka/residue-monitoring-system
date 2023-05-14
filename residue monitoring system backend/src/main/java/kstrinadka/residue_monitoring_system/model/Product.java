@@ -30,6 +30,9 @@ public class Product {
     @Column(name = "out_of_stock", nullable = false)
     private Long outOfStock;
 
+    @Column(name = "sold_quantity", nullable = false)
+    private Long soldQuantity;
+
     @ManyToOne
     @JoinColumn (name = "type_id", referencedColumnName = "id", nullable = false)
     private ProductType type;
