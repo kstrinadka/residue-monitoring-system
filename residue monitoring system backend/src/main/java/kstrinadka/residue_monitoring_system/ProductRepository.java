@@ -30,7 +30,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             SELECT pr.*
             FROM products pr
             WHERE item_number = :item_number""", nativeQuery = true)
-    Product getAllProductsByItemNumber(@Param("item_number") String item_number);
+    Product getProductByItemNumber(@Param("item_number") String item_number);
 
 
 }

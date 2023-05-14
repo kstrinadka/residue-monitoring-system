@@ -50,9 +50,10 @@ public class SystemResetService {
         Map<String, Long> cornicesMap = Constants.CORNICE_INITIAL_QUANTITY_MAP;
         List<ProductDto> cornicesList = new ArrayList<>();
         for (Map.Entry<String, Long> cornice: cornicesMap.entrySet()) {
-            Product currentCornice = productRepository.getAllProductsByItemNumber(cornice.getKey());
+            Product currentCornice = productRepository.getProductByItemNumber(cornice.getKey());
             currentCornice.setRest(cornice.getValue());
             currentCornice.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
+            currentCornice.setSoldQuantity(Constants.DEFAULT_SOLD_QUANTITY);
             productRepository.save(currentCornice);
             cornicesList.add(productMapper.productToDto(currentCornice));
         }
@@ -63,9 +64,10 @@ public class SystemResetService {
         Map<String, Long> flavoringsMap = Constants.FLAVORING_INITIAL_QUANTITY_MAP;
         List<ProductDto> flavoringsList = new ArrayList<>();
         for (Map.Entry<String, Long> flavoring: flavoringsMap.entrySet()) {
-            Product currentFlavoring = productRepository.getAllProductsByItemNumber(flavoring.getKey());
+            Product currentFlavoring = productRepository.getProductByItemNumber(flavoring.getKey());
             currentFlavoring.setRest(flavoring.getValue());
             currentFlavoring.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
+            currentFlavoring.setSoldQuantity(Constants.DEFAULT_SOLD_QUANTITY);
             productRepository.save(currentFlavoring);
             flavoringsList.add(productMapper.productToDto(currentFlavoring));
         }
@@ -76,9 +78,10 @@ public class SystemResetService {
         Map<String, Long> hatsMap = Constants.HAT_INITIAL_QUANTITY_MAP;
         List<ProductDto> hantsList = new ArrayList<>();
         for (Map.Entry<String, Long> hat: hatsMap.entrySet()) {
-            Product currentHat = productRepository.getAllProductsByItemNumber(hat.getKey());
+            Product currentHat = productRepository.getProductByItemNumber(hat.getKey());
             currentHat.setRest(hat.getValue());
             currentHat.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
+            currentHat.setSoldQuantity(Constants.DEFAULT_SOLD_QUANTITY);
             productRepository.save(currentHat);
             hantsList.add(productMapper.productToDto(currentHat));
         }
@@ -89,9 +92,10 @@ public class SystemResetService {
         Map<String, Long> moldingsMap = Constants.MOLDING_INITIAL_QUANTITY_MAP;
         List<ProductDto> moldingsList = new ArrayList<>();
         for (Map.Entry<String, Long> molding: moldingsMap.entrySet()) {
-            Product currentMolding = productRepository.getAllProductsByItemNumber(molding.getKey());
+            Product currentMolding = productRepository.getProductByItemNumber(molding.getKey());
             currentMolding.setRest(molding.getValue());
             currentMolding.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
+            currentMolding.setSoldQuantity(Constants.DEFAULT_SOLD_QUANTITY);
             productRepository.save(currentMolding);
             moldingsList.add(productMapper.productToDto(currentMolding));
         }
@@ -102,9 +106,10 @@ public class SystemResetService {
         Map<String, Long> tubsMap = Constants.TUB_INITIAL_QUANTITY_MAP;
         List<ProductDto> tubsList = new ArrayList<>();
         for (Map.Entry<String, Long> tub: tubsMap.entrySet()) {
-            Product currentTub = productRepository.getAllProductsByItemNumber(tub.getKey());
+            Product currentTub = productRepository.getProductByItemNumber(tub.getKey());
             currentTub.setRest(tub.getValue());
             currentTub.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
+            currentTub.setSoldQuantity(Constants.DEFAULT_SOLD_QUANTITY);
             productRepository.save(currentTub);
             tubsList.add(productMapper.productToDto(currentTub));
         }
@@ -115,9 +120,10 @@ public class SystemResetService {
         Map<String, Long> windowsillMap = Constants.WINDOWSILL_INITIAL_QUANTITY_MAP;
         List<ProductDto> windowsillList = new ArrayList<>();
         for (Map.Entry<String, Long> windowsill: windowsillMap.entrySet()) {
-            Product currentWindowsill = productRepository.getAllProductsByItemNumber(windowsill.getKey());
+            Product currentWindowsill = productRepository.getProductByItemNumber(windowsill.getKey());
             currentWindowsill.setRest(windowsill.getValue());
             currentWindowsill.setOutOfStock(Constants.DEFAULT_OUT_OF_STOCK_VALUE);
+            currentWindowsill.setSoldQuantity(Constants.DEFAULT_SOLD_QUANTITY);
             productRepository.save(currentWindowsill);
             windowsillList.add(productMapper.productToDto(currentWindowsill));
         }

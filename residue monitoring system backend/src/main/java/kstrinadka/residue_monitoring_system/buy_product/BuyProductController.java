@@ -3,6 +3,7 @@ package kstrinadka.residue_monitoring_system.buy_product;
 
 import kstrinadka.residue_monitoring_system.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -24,9 +25,9 @@ public class BuyProductController {
      * Если нет столько товара, то вернет этот товар и в нем написано количестов на остатке
      * не хватило => написать на фронте сколько осталось
      */
-    @PutMapping("/try/{item_number}")
-    public ProductDto tryToBuyProduct(@PathVariable Long item_number) {
-        return buyProductService.tryToBuyProduct(item_number);
+    @PutMapping("/trytobuy")
+    public ResponseEntity<ProductDto> tryToBuyProduct(@RequestParam String item_number, @RequestParam Long quantity) {
+        return buyProductService.tryToBuyProduct(item_number, quantity);
     }
 
 

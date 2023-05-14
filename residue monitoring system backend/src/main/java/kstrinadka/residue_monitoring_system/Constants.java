@@ -9,6 +9,7 @@ public final class Constants {
 
 
     public final static Long DEFAULT_OUT_OF_STOCK_VALUE = 0L;
+    public final static Long DEFAULT_SOLD_QUANTITY = 0L;
 
 
     public final static String CORNICE_CATEGORY_NAME = "карниз";
