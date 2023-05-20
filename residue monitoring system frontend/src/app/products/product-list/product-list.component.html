@@ -7,9 +7,10 @@
       <button (click)="findAll(); $event.preventDefault()">Показать</button>
     </form>
 
+    <br>
+
     <form>
-      <label for="type-product">Перечень товаров определенной категории: </label>
-      <input id="type-product" name="number" type="number">
+      <label>Перечень товаров определенной категории: </label>
       <button (click)="getAllCornices(); $event.preventDefault()">Карнизы</button>
       <button (click)="getAllMoldings(); $event.preventDefault()">Молдинги</button>
       <button (click)="getAllFlavorings(); $event.preventDefault()">Освежители воздуха</button>
@@ -23,6 +24,8 @@
     <form>
       <button (click)="getOutOfStockStatistic(); $event.preventDefault()">Посмотреть все out of stock товары</button>
     </form>
+
+    <br>
 
     <form>
       <button (click)="resetSystem(); $event.preventDefault()">Сбросить состояние всех товар к значениям по-умолчанию</button>
