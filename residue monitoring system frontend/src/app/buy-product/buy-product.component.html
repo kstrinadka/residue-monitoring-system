@@ -1,4 +1,6 @@
-<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+<div *ngIf="error" class="alert" [ngClass]="{'alert-danger': error !== 'Покупка успешно совершена', 'alert-success': error === 'Покупка успешно совершена'}">
+  {{ error }}
+</div>
 <div class="card my-5">
   <div class="card-body">
 

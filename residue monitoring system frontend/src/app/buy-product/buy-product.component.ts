@@ -24,7 +24,15 @@ export class BuyProductComponent {
    *  обновляет список продуктов на сайте и необходимые показатели
    */
   private updateParameters(data: Product[]): void {
-    this.products = data;
+    this.products = data.sort((a, b) => {
+      if (a.item_number < b.item_number) {
+        return -1;
+      } else if (a.item_number > b.item_number) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
     this.productsCount = data.length;
   }
 
@@ -105,7 +113,7 @@ export class BuyProductComponent {
       product => {
         console.log('Покупка успешно совершена:', product);
         this.updateProductList();
-        // this.gotoProductList();
+        this.error = 'Покупка успешно совершена'; // Set success message
       },
       error => {
         console.log('Ошибка при покупке товара:', error);
