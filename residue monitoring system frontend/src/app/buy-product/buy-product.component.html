@@ -1,0 +1,54 @@
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+<div class="card my-5">
+  <div class="card-body">
+
+    <form>
+      <label>Перечень всех товаров: </label>
+      <button (click)="findAll(); $event.preventDefault()">Показать</button>
+    </form>
+
+    <form>
+      <label for="type-product">Перечень товаров определенной категории: </label>
+      <input id="type-product" name="number" type="number">
+      <button (click)="getAllCornices(); $event.preventDefault()">Карнизы</button>
+      <button (click)="getAllMoldings(); $event.preventDefault()">Молдинги</button>
+      <button (click)="getAllFlavorings(); $event.preventDefault()">Освежители воздуха</button>
+      <button (click)="getAllTubs(); $event.preventDefault()">Бадьи</button>
+      <button (click)="getAllWindowsills(); $event.preventDefault()">Подоконники</button>
+      <button (click)="getAllHats(); $event.preventDefault()">Шляпы банные</button>
+    </form>
+
+    <p>Всего товаров: {{ productsCount }}</p>
+
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Артикул</th>
+        <th scope="col">Категория</th>
+        <th scope="col">Название</th>
+        <th scope="col">Цена</th>
+        <th scope="col">Остаток на складе</th>
+        <th scope="col">Количество продаж</th>
+        <th scope="col">Out of stock</th>
+        <th scope="col">Количество</th> <!-- добавляем столбец для ввода количества -->
+        <th scope="col">Купить</th> <!-- добавляем столбец для кнопки купить -->
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.item_number }}</td>
+        <td>{{ product.type.categoryname }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.cost}}</td>
+        <td>{{ product.rest }}</td>
+        <td>{{ product.soldQuantity }}</td>
+        <td>{{ product.outOfStock }}</td>
+<!--        <td><input type="number" min="1" max="{{product.rest}}" value="1"  #numberInput></td> &lt;!&ndash; добавляем поле для ввода количества &ndash;&gt;-->
+        <td><input type="number" value="1"  #numberInput></td> <!-- добавляем поле для ввода количества -->
+        <td><button (click)="buyProduct(product, numberInput.value)">Купить</button></td> <!-- добавляем кнопку для покупки -->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
