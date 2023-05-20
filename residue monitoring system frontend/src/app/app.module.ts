@@ -7,14 +7,12 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import {HttpClientModule} from "@angular/common/http";
 import {ProductService} from "./products/service/product.service";
 import { BuyProductComponent } from './buy-product/buy-product.component';
-import { ResetSystemComponent } from './reset-system/reset-system.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     BuyProductComponent,
-    ResetSystemComponent
   ],
 
   imports: [

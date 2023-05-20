@@ -20,7 +20,7 @@ public class MainService {
         this.productMapper = productMapper;
         this.productRepository = productRepository;
     }
-    
+
     public List<ProductDto> getAllProducts() {
         return productMapper.productsToDtos(productRepository.findAll());
     }
