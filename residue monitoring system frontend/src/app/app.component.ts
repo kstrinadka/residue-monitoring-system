@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'residue-monitoring-system-frontend';
+
+  title: string;
+
+  constructor() {
+    this.title = 'Приложение для покупки товара и учета out of stock';
+  }
 }

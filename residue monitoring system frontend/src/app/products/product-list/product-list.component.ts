@@ -15,6 +15,7 @@ export class ProductListComponent {
   outOfStockAmount: number;
   possibleProfit: number;
   lossesAmount: number;
+  error: string;
 
   constructor(private productService: ProductService) {
   }
@@ -127,5 +128,39 @@ export class ProductListComponent {
       lossesAmount += product.cost * product.outOfStock;
     }
     return lossesAmount;
+  }
+
+  getOutOfStockStatistic() {
+    this.productService.getOutOfStockStatistic().subscribe(data => {
+      this.updateParameters(data)
+    });
+  }
+
+  private getOutOfStockProducts() {
+    var outOfStockProducts = this.products
+    for (let product of outOfStockProducts) {
+      if (product.outOfStock > 0) {
+        outOfStockProducts.push(product);
+      }
+    }
+    return outOfStockProducts;
+  }
+
+  resetSystem() {
+    this.productService.resetSystem().subscribe(
+      product => {
+        console.log('Покупка успешно совершена:', product);
+        this.updateProductList();
+        // this.gotoProductList();
+      },
+      error => {
+        console.log('Ошибка при покупке товара:', error);
+        this.error = 'Ошибка при покупке товара';
+      }
+    );
+  }
+
+  updateProductList() {
+    this.findAll();
   }
 }

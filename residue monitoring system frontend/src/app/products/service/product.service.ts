@@ -68,11 +68,32 @@ export class ProductService {
    *  Купить выбранный товар в заданном количестве
    */
   public buyProduct(item_number: string, quantity: number): Observable<Product[]> {
-    let params = new HttpParams();
-    params = params.append('item_number', item_number);
-    params = params.append('quantity', quantity);
+    console.log('item_number = ', item_number);
+    console.log('quantity = ', quantity);
+
+    // let params = new HttpParams();
+    let params = new HttpParams()
+      .set('item_number', item_number)
+      .set('quantity', quantity.toString());
+
     let url = `http://localhost:8080/buy/trytobuy`;
-    return this.http.put<Product[]>(url, { params: params });
+    return this.http.put<Product[]>(url, null, { params: params });
   }
 
+  /**
+   *  Купить выбранный товар в заданном количестве
+   */
+  public resetSystem(): Observable<Product[]> {
+    let url = `http://localhost:8080/reset/all`;
+    return this.http.put<Product[]>(url, null);
+  }
+
+
+  /**
+   *  - Перечень всех out of stock товаров
+   */
+  public  getOutOfStockStatistic(): Observable<Product[]> {
+    let url = `http://localhost:8080/main/all/outofstock`;
+    return this.http.get<Product[]>(url);
+  }
 }

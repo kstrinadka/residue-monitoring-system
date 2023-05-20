@@ -1,3 +1,4 @@
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
 <div class="card my-5">
   <div class="card-body">
 
@@ -17,6 +18,17 @@
       <button (click)="getAllHats(); $event.preventDefault()">Шляпы банные</button>
     </form>
 
+    <br>
+
+    <form>
+      <button (click)="getOutOfStockStatistic(); $event.preventDefault()">Посмотреть все out of stock товары</button>
+    </form>
+
+    <form>
+      <button (click)="resetSystem(); $event.preventDefault()">Сбросить состояние всех товар к значениям по-умолчанию</button>
+    </form>
+
+    <br>
 
     <p>Всего товаров: {{ productsCount }}</p>
     <p>Продано товаров на сумму: {{ totalEarned }}</p>
