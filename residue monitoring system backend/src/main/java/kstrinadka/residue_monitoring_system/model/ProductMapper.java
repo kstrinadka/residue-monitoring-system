@@ -13,12 +13,12 @@ import java.util.List;
 public interface ProductMapper {
 
     // сущность -> DTO
-    @Mapping(target = "typeId", source = "type.id")
+    @Mapping(target = "type", source = "type")
     ProductDto productToDto(Product product);
     List<ProductDto> productsToDtos(List<Product> products);
 
     // DTO -> сущность
-    @Mapping(target = "type.id", source = "typeId")
+    @Mapping(target = "type", source = "type")
     Product dtoToProduct(ProductDto dto);
     List<Product> dtosToProducts(List<ProductDto> dtos);
 

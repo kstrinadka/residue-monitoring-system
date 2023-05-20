@@ -29,39 +29,13 @@ public class MainController {
         return mainService.getAllProducts();
     }
 
-// эти три показателя можно на фронте считать через предыдущий верхний метод!
-
-    /*
-    *//**,
+    /**
      * - нет кнопки
      * - не проверено
-     * @return - Сколько магазин заработал
-     *//*
-    @GetMapping(path = "/earnings")
-    public List<ProductDto> getAllEarning() {
-        return mainService.getAllEarning();
+     * @return - Перечень всех шляп
+     */
+    @GetMapping(path = "/all/outofstock")
+    public List<ProductDto> getAllOutOdfStockProducts() {
+        return mainService.getAllOutOdfStockProducts();
     }
-
-    *//**
-     * - нет кнопки
-     * - не проверено
-     * @return - Сколько магазин потерял на out of stock
-     *//*
-    @GetMapping(path = "/losses")
-    public List<ProductDto> getAllLosses() {
-        return mainService.getAllLosses();
-    }
-
-
-    *//**
-     * - нет кнопки
-     * - не проверено
-     * potential profit
-     * @return - Сколько магазин мог бы заработать, если бы не было out of stock
-     *//*
-    @GetMapping(path = "/cornices/all")
-    public List<ProductDto> getPotentialProfit() {
-        return mainService.getPotentialProfit();
-    }*/
-
 }

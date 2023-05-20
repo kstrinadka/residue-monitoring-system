@@ -20,33 +20,12 @@ public class MainService {
         this.productMapper = productMapper;
         this.productRepository = productRepository;
     }
-
-
-    public List<ProductDto> getAllHats() {
-        return productMapper.productsToDtos(productRepository.getAllProductsByCategory(Constants.HAT_CATEGORY_ID));
-    }
-
-    public List<ProductDto> getAllCornices() {
-        return productMapper.productsToDtos(productRepository.getAllProductsByCategory(Constants.CORNICE_CATEGORY_ID));
-    }
-
-    public List<ProductDto> getAllMoldings() {
-        return productMapper.productsToDtos(productRepository.getAllProductsByCategory(Constants.MOLDING_CATEGORY_ID));
-    }
-
-    public List<ProductDto> getAllFlavorings() {
-        return productMapper.productsToDtos(productRepository.getAllProductsByCategory(Constants.FLAVORING_CATEGORY_id));
-    }
-
-    public List<ProductDto> getAllTubs() {
-        return productMapper.productsToDtos(productRepository.getAllProductsByCategory(Constants.TUB_CATEGORY_id));
-    }
-
-    public List<ProductDto> getAllWindowsills() {
-        return productMapper.productsToDtos(productRepository.getAllProductsByCategory(Constants.WINDOWSILL_CATEGORY_id));
-    }
-
+    
     public List<ProductDto> getAllProducts() {
         return productMapper.productsToDtos(productRepository.findAll());
+    }
+
+    public List<ProductDto> getAllOutOdfStockProducts() {
+        return productMapper.productsToDtos(productRepository.finAllOutOfStock());
     }
 }

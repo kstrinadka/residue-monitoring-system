@@ -33,4 +33,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Product getProductByItemNumber(@Param("item_number") String item_number);
 
 
+    /**
+     * -- Получить перечень out of stock товаров
+     */
+    @Query(value = """
+            SELECT pr.*
+            FROM products pr
+            WHERE out_of_stock > 0""", nativeQuery = true)
+    List<Product> finAllOutOfStock();
 }
