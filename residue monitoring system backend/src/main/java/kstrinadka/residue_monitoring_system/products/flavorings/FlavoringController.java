@@ -21,8 +21,6 @@ public class FlavoringController {
 
 
     /**
-     * - нет кнопки
-     * - не проверено
      * @return - Перечень всех освежителей воздуха
      */
     @GetMapping(path = "/all")

@@ -21,8 +21,6 @@ public class TubController {
 
 
     /**
-     * - нет кнопки
-     * - не проверено
      * @return - Перечень всех бадей
      */
     @GetMapping(path = "/all")

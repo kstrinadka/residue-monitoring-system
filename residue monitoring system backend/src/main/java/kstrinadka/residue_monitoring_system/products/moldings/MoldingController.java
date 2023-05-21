@@ -20,8 +20,6 @@ public class MoldingController {
 
 
     /**
-     * - нет кнопки
-     * - не проверено
      * @return - Перечень всех молдингов
      */
     @GetMapping(path = "/all")

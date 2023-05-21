@@ -20,8 +20,6 @@ public class CorniceController {
 
 
     /**
-     * - нет кнопки
-     * - не проверено
      * @return - Перечень всех карнизов
      */
     @GetMapping(path = "/all")

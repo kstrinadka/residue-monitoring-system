@@ -21,8 +21,6 @@ public class WindowsillController {
     WindowsillService windowsillService;
 
     /**
-     * - нет кнопки
-     * - не проверено
      * @return - Перечень всех подоконников
      */
     @GetMapping(path = "/all")

@@ -14,15 +14,11 @@ import java.util.List;
 @RequestMapping("/main")
 public class MainController {
 
-
     @Autowired
     MainService mainService;
 
-
     /**
-     * - нет кнопки
-     * - не проверено
-     * @return - Перечень всех шляп
+     * @return - Перечень всех продуктов
      */
     @GetMapping(path = "/all")
     public List<ProductDto> getAllProducts() {
@@ -30,9 +26,7 @@ public class MainController {
     }
 
     /**
-     * - нет кнопки
-     * - не проверено
-     * @return - Перечень всех шляп
+     * @return - Перечень всех продуктов, у которых out of stock > 0
      */
     @GetMapping(path = "/all/outofstock")
     public List<ProductDto> getAllOutOdfStockProducts() {

@@ -21,7 +21,8 @@ public class SystemResetController {
 
 
     /**
-     * Сбрасывает значение количество всех товар к изначальному состоянию
+     *  Сбрасывает значение количества всех товаров к изначальному состоянию
+     * (остаток, количестов проданного, out of stock)
      */
     @PutMapping("/all")
     public List<ProductDto> resetAllProductsQuantity() {

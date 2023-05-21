@@ -20,8 +20,6 @@ public class HatController {
 
 
     /**
-     * - кнопка работает
-     * - работает
      * @return - Перечень всех шляп
      */
     @GetMapping(path = "/all")
