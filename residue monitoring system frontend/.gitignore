@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/residue-monitoring-system-frontend-win32-x64/resources/app/.vscode/extensions.json
+/residue-monitoring-system-frontend-win32-x64/resources/app/.vscode/launch.json
+/residue-monitoring-system-frontend-win32-x64/resources/app/.vscode/tasks.json
