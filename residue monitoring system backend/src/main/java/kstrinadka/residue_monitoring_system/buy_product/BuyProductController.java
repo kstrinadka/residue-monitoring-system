@@ -1,6 +1,9 @@
 package kstrinadka.residue_monitoring_system.buy_product;
 
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import kstrinadka.residue_monitoring_system.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/buy")
+@Tag(name = "Продукты", description = "Методы для работы с продуктами")
 public class BuyProductController {
 
     @Autowired
@@ -26,7 +30,12 @@ public class BuyProductController {
      * которое хотел купить покупатель
      */
     @PutMapping("/trytobuy")
-    public ResponseEntity<ProductDto> tryToBuyProduct(@RequestParam String item_number, @RequestParam Long quantity) {
+    @Operation(summary = "Покупка товара, если есть указанное количество в остатке")
+    public ResponseEntity<ProductDto> tryToBuyProduct(
+            @Parameter(description = "Номер товара")
+            @RequestParam String item_number,
+            @Parameter(description = "Количество товара")
+            @RequestParam Long quantity) {
         return buyProductService.tryToBuyProduct(item_number, quantity);
     }
 
