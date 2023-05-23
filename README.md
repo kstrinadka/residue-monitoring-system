@@ -2,7 +2,7 @@
 Приложение по подсчету out of stock товаров и вычислению потенциальной прибыли магазина
 
 # Запуск
-docker-compose up
+```sh docker-compose up```
 
 # Residue Monitoring System
 
